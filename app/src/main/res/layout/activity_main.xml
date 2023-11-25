@@ -1,18 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/dark_theme_bg"
+    android:padding="18dp"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/themeSwitchContainer"
+        android:layout_alignParentEnd="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/icon_sun_light"
+            android:contentDescription="@string/light_theme"/>
 
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/themeSwitch" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/dark_theme"
+            app:srcCompat="@drawable/icon_moon_light" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/Roboto_Regular"
+        android:text="@string/welcome_text"
+        android:textColor="@color/white"
+        android:layout_below="@id/heading_space"
+        android:textSize="50sp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/quiz_title"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:fontFamily="@font/roboto"
+        android:textFontWeight="800"
+        android:id="@+id/csQuizText"
+        android:layout_below="@id/welcomeText"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tag_line"
+        android:layout_marginTop="10sp"
+        android:textColor="@color/tag_line"
+        android:id="@+id/tag_line"
+        android:textStyle="italic"
+        android:textSize="18dp"
+        android:layout_below="@id/csQuizText"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/subject_selection"
+        android:layout_below="@id/tag_line"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android: 
+            app:cardBackgroundColor="#3b4d67"
+            app:cardCornerRadius="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#3b4d67"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/html_icon"
+                    android:contentDescription="@string/html"
+                    android:layout_marginRight="20dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/html"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto"
+                    android:textFontWeight="500"
+                    android:id="@+id/htmlText"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:id="@+id/heading_space"
+        android:layout_below="@id/themeSwitchContainer"
+        />
+</RelativeLayout>

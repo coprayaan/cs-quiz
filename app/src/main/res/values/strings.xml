@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CSQuiz</string>
+    <string name="light_theme">Light Theme</string>
+    <string name="welcome_text">Welcome to the</string>
+    <string name="quiz_title">Frontend Quiz!</string>
+    <string name="dark_theme">dark_theme</string>
+<string name="tag_line">Pick a subject to get started</string>
+    <string name="html">HTML\n</string>
 </resources>
