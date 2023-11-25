@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/dark_theme_bg"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:layout_gravity="center"
+        android:id="@+id/header_container"
+        android:paddingVertical="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/header_topic_icon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/html_icon"/>
+
+        <TextView
+            android:id="@+id/header_topic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_toRightOf="@id/header_topic_icon"
+            android:layout_centerVertical="true"
+            android:text="HTML Quiz"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/themeSwitchContainer"
+            android:layout_alignParentEnd="true">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_sun_light"
+                android:contentDescription="@string/light_theme"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/themeSwitch" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/dark_theme"
+                android:src="@drawable/icon_moon_light" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
