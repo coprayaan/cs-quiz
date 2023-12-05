@@ -4,4 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="darkThemeColor">#FF303d52</color>
     <color name="tag_line">#8a9ab1</color>
+    <color name="options_bg">#3b4d67</color>
+    <color name="my_light_primary">#a42af1</color>
+    <color name="my_light_primary_variant">#7c1de8</color>
+
 </resources>

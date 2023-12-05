@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         CardView cardView1 = findViewById(R.id.topic_card);
         cardView1.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, QuizActivity.class);
+            startActivity(intent);
         });
     }
 }

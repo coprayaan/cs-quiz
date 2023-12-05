@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dark_theme_bg"
+    android:paddingHorizontal="18dp"
+    tools:context=".ResultActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/header_container"
+        android:paddingVertical="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/header_topic_icon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/html_icon"/>
+
+        <TextView
+            android:id="@+id/header_topic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_toRightOf="@id/header_topic_icon"
+            android:layout_centerVertical="true"
+            android:text="HTML Quiz"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/themeSwitchContainer"
+            android:layout_alignParentEnd="true">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_sun_light"
+                android:contentDescription="@string/light_theme"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:checked="true"
+                android:gravity="center"
+                android:id="@+id/themeSwitch" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/dark_theme"
+                android:src="@drawable/icon_moon_light" />
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/quizCompletedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/Roboto_Light"
+        android:text="Quiz Completed"
+        android:textColor="@color/white"
+        android:layout_below="@id/header_container"
+        android:textSize="50sp" />
+    <TextView
+        android:id="@+id/youScoredText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/Roboto_Bold"
+        android:text="You scored..."
+        android:textColor="@color/white"
+        android:layout_below="@id/quizCompletedText"
+        android:textSize="50sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/result_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/youScoredText"
+        app:cardBackgroundColor="@color/options_bg"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            >
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/result_topic_header"
+    android:orientation="horizontal"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    >
+            <ImageView
+                android:id="@+id/result_topic_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/html_icon"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/result_topic_name"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <TextView
+                android:id="@+id/result_topic_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="7dp"
+                android:layout_gravity="center"
+                android:text="HTML Quiz"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/result_topic_icon"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:layout_editor_absoluteY="7dp" />
+</LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/result_score"
+                android:text="8"
+                android:textSize="70sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/Roboto_Bold"
+                app:layout_constraintTop_toBottomOf="@id/result_topic_header"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/totalQuestionCount"
+                android:text="out of 10"
+                android:textSize="16dp"
+                android:textColor="@color/tag_line"
+                android:fontFamily="@font/Roboto_Italic"
+                app:layout_constraintTop_toBottomOf="@id/result_score"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit"
+        android:text="Submit Answer"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/roboto"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/result_card"
+        />
+</RelativeLayout>
