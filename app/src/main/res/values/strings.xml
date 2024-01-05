@@ -6,4 +6,6 @@
     <string name="dark_theme">dark_theme</string>
 <string name="tag_line">Pick a subject to get started</string>
     <string name="html">HTML\n</string>
+    <string name="html_attribute">It is a topic image for HTML</string>
+    <string name="Html">HTML</string>
 </resources>
